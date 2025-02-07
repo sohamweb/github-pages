@@ -1,0 +1,28 @@
+html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+</head>
+<body>
+
+    <h2>Admission Form</h2>
+    <form action="/submit_admission" method="POST">
+        <!-- Full Name -->
+        <label for=" full name">Full Name:</label>
+        <input type="text" id=" full name" name="name" required><br><br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <!-- Grade -->
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

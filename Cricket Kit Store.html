@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Shopping Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .item {
+            background-color: #fffacd;
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .cart {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #90ee90;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Cricket Store!</h1>
+    <p>Click the button to add an item to the cart.</p>
+
+    <div class="item">
+        <p><img src="https://th.bing.com/th/id/OIP.YexD_UTV1V5PodDxXDaZcwHaHa?w=177&h=180&c=7&r=0&o=5&pid=1.7" height="100" width="100">
+Cricket Bat - ₹4999</p>
+        <button onclick="addToCart('Cricket Bat', 4999)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p><img src="https://m.media-amazon.com/images/I/61jiDhXYGcL._SL1220_.jpg" height="100" width="100" Ball (Leather Ball)- ₹999</p>
+        <button onclick="addToCart('Cricket Ball (Leather ball)', 999)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p><img src"https://ts4.mm.bing.net/th?id=OIP.xuzCHKNDYq7BpdUWl44gHAHaJC&pid=15.1"  height="100" width="100">Cricket Kit - ₹6999</p>
+        <button onclick="addToCart('Cricket Kit', 6999)">Add to Cart</button>
+    </div> 
+
+    <div class="item">
+        <p><img src=
+"https://th.bing.com/th/id/OIP.YlnVMMzh1SvutelonWIOrAHaFo?rs=1&pid=ImgDetMain" height="100" width="100">Cricket Cloths - ₹1999</p>
+        <button onclick="addToCart('Cricket Cloths', 1999)">Add to Cart</button>
+    </div>
+  
+    <div class="item">
+        <p><img src="https://th.bing.com/th/id/OIP.x7fxgv-cfzSx89nUND3HuQHaEc?w=294&h=180&c=7&r=0&o=5&pid=1.7" height="100" width="100">Cricket Sunglasses- ₹2499</p>
+        <button onclick="addToCart('Cricket Sunglasses', 2499)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p><img src="https://th.bing.com/th/id/OIP.JRDk2MoAJS_l9n2halgr9QAAAA?w=171&h=180&c=7&r=0&o=5&pid=1.7" height="100" width="100">Cricket Hammer  - ₹1499</p>
+        <button onclick="addToCart('Cricket Hammer', 1499)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p><img src="https://th.bing.com/th/id/OIP.-z3-mUJleSX57dwly-4rXQHaHa?w=191&h=191&c=7&r=0&o=5&pid=1.7" height="100" width="100">Cricket Shoes (Spikes) - ₹3999</p>
+        <button onclick="addToCart('Cricket Shoes (Spikes)', 3999)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p><img src="https://cdn.nwscdn.com/media/catalog/product/cache/hxw/s/t/stumpsthreequarter02-new.jpg" height="100" width="100">Stumps - ₹1499</p>
+        <button onclick="addToCart('Stumps ', 1499)">Add to Cart</button>
+    </div>
+
+    <div class="cart">
+        <h3>Shopping Cart</h3>
+        <p id="cartList">Cart is empty</p>
+        <h3>Total: ₹<span id="totalAmount">0</span></h3>
+    </div>
+
+    <script>
+        let totalAmount = 0;
+
+        function addToCart(item, price) {
+            let cart = document.getElementById("cartList");
+            let total = document.getElementById("totalAmount");
+
+            // Update cart items
+            if (cart.innerHTML === "Cart is empty") {
+                cart.innerHTML = item;
+            } else {
+                cart.innerHTML += ", " + item;
+            }
+
+            // Update total amount
+            totalAmount += price;
+            total.innerHTML = totalAmount;
+        }
+    </script>
+
+</body>
+</html>
+

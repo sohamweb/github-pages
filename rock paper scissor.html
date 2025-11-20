@@ -1,0 +1,33 @@
+rock paper scissor
+<html>
+<head>
+ <title>rock,paper,scissor</title>
+</head>
+<body>
+<h1>rock paper scissor</h1>
+<button onlick="play Game('rock')">rock</button>
+<button onlick="play Game('paper')">paper</button>
+<button onlick="play Game('scissor')">scissor</button>
+<p id="result"></p>
+
+<script>
+<function play game(userChoice){
+const Choices=["rock","paper","scissor"];
+const computerChoice=choices[Math.floor(Math random0*choices.length)];
+let result;
+if(userchoice===computerchoice)[
+result="it's a draw!";
+}else if (
+(COMPUTERchoice==="rock" && computerchoice==="scissor")||
+<userchoice==="paper" && computerchoice==="rock")||
+(userchoice==="scissor" && computerchoice==="paper")||
+) {
+result="you win!";
+} else {
+result= "you lose!";
+}
+
+document.getelementbyld("result").innertext='you chose ${userchice},computer chose${computerchoice}.${result}';
+}</script>
+</body>
+</html>

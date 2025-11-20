@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .game-box {
+      background-color: #ffffff;
+      border: 3px solid #1e90ff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 80%;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-box">
+    <h1>Guess the Number!</h1>
+    <p>I'm thinking of a number between <strong>1 and 300</strong>.</p>
+    <p>Try to guess it in under <strong>10 attempts</strong>. It's your challenge!</p>
+
+    <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="300" />
+    <button onclick="checkGuess()">Guess</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const numberToGuess = Math.floor(Math.random() * 300) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('guessInput').value);
+      attempts++;
+
+      const message = document.getElementById('message');
+
+      if (isNaN(guess)) {
+        message.textContent = "Please enter a valid number.";
+      } else if (guess < numberToGuess) {
+        message.textContent = "Too low! Try again.";
+      } else if (guess > numberToGuess) {
+        message.textContent = "Too high! Try again.";
+      } else {
+        message.textContent = `🎉 Congratulations! You guessed it in ${attempts} attempt${attempts > 1 ? 's' : ''}.`;
+      }
+
+      if (attempts >= 10 && guess !== numberToGuess) {
+        message.textContent += " 😢 You've used all 10 attempts!";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Falcons Sports Club</title>
+  <style>
+    :root {
+      --primary: #1e3a8a; /* deep blue */
+      --accent: #f97316;  /* vibrant orange */
+      --bg: #f1f5f9;
+      --text: #1f2937;
+      --card: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .banner {
+      background: var(--accent);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .banner h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+
+    .banner p {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #374ea3;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Falcons Sports Club</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#rosters">Team Rosters</a>
+      <a href="#schedule">Game Schedule</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <div class="banner" id="home">
+    <h2>Train Hard. Play Fair. Win Together.</h2>
+    <p>Your source for all Grade 8 Falcons team news and updates.</p>
+  </div>
+
+  <section id="news">
+    <div class="card">
+      <h3>Latest News</h3>
+      <p>Practice for the basketball team is canceled on Monday due to a school event. Check the schedule page for the updated time.</p>
+    </div>
+  </section>
+
+  <section id="interactive">
+    <div class="card">
+      <h3>Interactive Feature</h3>
+      <p>Click the button to receive a personalized message!</p>
+      <button onclick="showGreeting()">Get Your Sports Greeting!</button>
+      <p id="greeting" style="margin-top: 15px; font-weight: bold;"></p>
+    </div>
+  </section>
+
+  <section id="spotlight">
+    <div class="card">
+      <h3>Volleyball Team Spotlight</h3>
+      <p>Meet our rising stars in the Grade 8 volleyball squad. Profiles and highlights coming soon!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Falcons Sports Club • All rights reserved</p>
+  </footer>
+
+  <script>
+    function showGreeting() {
+      const messages = [
+        "Go Falcons! You're unstoppable!",
+        "Play with heart, win with pride!",
+        "Teamwork makes the dream work!",
+        "Every practice counts — keep pushing!"
+      ];
+      const greeting = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('greeting').textContent = greeting;
+    }
+  </script>
+
+</body>
+</html>

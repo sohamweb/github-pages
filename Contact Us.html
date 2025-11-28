@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>FC Goa - Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff6600, #003366); /* FC Goa orange & blue */
+      text-align: center;
+      color: #fff;
+    }
+    h1 {
+      color: #ffcc00;
+      font-size: 42px;
+      text-shadow: 2px 2px #000;
+    }
+    p {
+      font-size: 18px;
+      color: #f0f0f0;
+    }
+    form {
+      background: #ffffff;
+      border: 3px solid #ff6600;
+      border-radius: 15px;
+      padding: 20px;
+      width: 420px;
+      margin: auto;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+      color: #003366;
+    }
+    label {
+      font-weight: bold;
+      color: #003366;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ff6600;
+      border-radius: 10px;
+    }
+    input[type="submit"], input[type="reset"] {
+      background: #003366;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background: #ff6600;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏟️ FC Goa - Contact Us ⚽</h1>
+  <p>We’d love to hear from our Gaurs! Drop us a message below 👇</p>
+
+  <form action="fcgoa@gmail.com" method="post" enctype="text/plain">
+    <label for="name">👤 Your Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">📧 Your Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="message">💬 Message:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br>
+
+    <input type="submit" value="⚡ Send">
+    <input type="reset" value="🧹 Clear">
+  </form>
+
+  <div class="info">
+        <p>⏰ Hours: Mon–Fri, 9am–5pm</p>
+        <p>📍 Fatorda Stadium, Goa</p>
+  </div>
+
+</body>
+</html>

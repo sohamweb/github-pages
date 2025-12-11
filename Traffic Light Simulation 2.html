@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Traffic Light</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;              /* full screen height */
+      display: flex;              /* use flexbox */
+      justify-content: center;    /* center horizontally */
+      align-items: center;        /* center vertically */
+      background-color: lightblue; /* change background color */
+    }
+
+    .traffic-light {
+      width: 100px;
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .light {
+      width: 60px;
+      height: 60px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: gray;
+    }
+
+    .red.on { background: red; }
+    .yellow.on { background: yellow; }
+    .green.on { background: green; }
+  </style>
+</head>
+<body>
+  <div class="traffic-light">
+    <div class="light red" id="red"></div>
+    <div class="light yellow" id="yellow"></div>
+    <div class="light green" id="green"></div>
+  </div>
+
+  <script>
+    const lights = ["red", "green", "yellow"];
+    let index = 0;
+
+    function changeLight() {
+      // turn all off
+      lights.forEach(id => document.getElementById(id).classList.remove("on"));
+      // turn one on
+      document.getElementById(lights[index]).classList.add("on");
+      // move to next
+      index = (index + 1) % lights.length;
+    }
+
+    // change every 1 second
+    setInterval(changeLight, 1000);
+  </script>
+</body>
+</html>

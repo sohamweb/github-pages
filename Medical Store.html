@@ -1,0 +1,206 @@
+<html>
+<head>
+  <title>Healthy Life Medical Store</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+    header {
+      background-color: #4b0082;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #6a5acd;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+    }
+    .products {
+      display: flex;
+      flex-direction: row;   /* 👈 Row layout */
+      gap: 20px;
+      flex-wrap: wrap;       /* 👈 Wrap items if screen is small */
+      justify-content: space-around; /* 👈 Even spacing */
+    }
+    .product {
+      background-color: #ffffff;
+      border: 2px solid #dcdcdc;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 220px;          /* 👈 Fixed width for consistency */
+    }
+    .product h3 {
+      color: #4b0082;
+    }
+    .product p {
+      color: #333;
+    }
+    .product button {
+      background-color: #32cd32;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .product button:hover {
+      background-color: #28a428;
+    }
+    .cart {
+      margin-top: 40px;
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #ff69b4;
+    }
+    .cart h2 {
+      color: #c71585;
+    }
+    .cart ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .cart li {
+      margin: 5px 0;
+      font-weight: bold;
+    }
+    .clear-btn {
+      background-color: #ff4500;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .clear-btn:hover {
+      background-color: #e03e00;
+    }
+    footer {
+      background-color: #4b0082;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Soham Medical Store</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Medicines</a>
+  </nav>
+
+  <div class="container">
+    <div class="products">
+      <div class="product">
+        <h3>Paracetamol 650</h3>
+        <p>Fever & pain relief</p>
+        <p>₹302445</p>
+        <button onclick="addToCart('Paracetamol', 30)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Cough Syrup</h3>
+        <p>Relief from cough</p>
+        <p>₹9024</p>
+        <button onclick="addToCart('Cough Syrup', 90)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Vitamin Tablets</h3>
+        <p>Boost immunity</p>
+        <p>₹12340</p>
+        <button onclick="addToCart('Vitamin Tablets', 120)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Albuterol</h3>
+        <p>For breathing issues like asthma (inhaler/nebulizer)</p>
+        <p>₹13030</p>
+        <button onclick="addToCart('Albuterol', 130)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Amoxicillin</h3>
+        <p>A common antibiotic for bacterial infections</p>
+        <p>₹15320</p>
+        <button onclick="addToCart('Amoxicillin', 150)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Levothyroxine</h3>
+        <p>For low thyroid levels (hypothyroidism)</p>
+        <p>₹12240</p>
+        <button onclick="addToCart('Levothyroxine', 122)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Aspirin</h3>
+        <p>Thinning The Blood</p>
+        <p>₹16923</p>
+        <button onclick="addToCart('Aspirin', 169)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>Cart Items</h2>
+      <ul id="cart-list"></ul>
+      <p><strong>Total Bill:</strong> ₹<span id="total">0</span></p>
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>You Will Get The Best Medicines Here</p>
+  </footer>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      total += price;
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-list');
+      cartList.innerHTML = '';
+      cart.forEach(entry => {
+        const li = document.createElement('li');
+        li.textContent = `${entry.item} - ₹${entry.price}`;
+        cartList.appendChild(li);
+      });
+      document.getElementById('total').textContent = total;
+    }
+
+    function clearCart() {
+      cart = [];
+      total = 0;
+      updateCart();
+    }
+  </script>
+
+</body>
+</html>

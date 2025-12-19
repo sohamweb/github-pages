@@ -1,0 +1,98 @@
+
+<html >
+<head>
+  <title>Book a Cab</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #7c3aed, #22d3ee);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    input, select {
+      background: #fff;
+      color: #000;
+    }
+    button {
+      background: #fbbf24;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #f59e0b;
+    }
+    .amount {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: #fbbf24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Book a Cab</h1>
+    <form>
+      <label for="pickup">Pickup</label>
+      <input type="text" id="pickup" placeholder="Enter pickup location" required>
+
+      <label for="drop">Drop</label>
+      <input type="text" id="drop" placeholder="Enter drop location" required>
+
+      <label for="vehicle">Vehicle</label>
+      <select id="vehicle" required>
+        <option value="">Select</option>
+        <option value="1000000">$1000000 - Alto</option>
+        <option value="6969996969">$69696999696 - Mercedes</option>
+        <option value="6767767767">$676767767 - RR</option>
+      </select>
+
+      <!-- Display fare amount -->
+      <div class="amount" id="amount">MONEY: $0</div>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+  <script>
+    const vehicleSelect = document.getElementById("vehicle");
+    const amountDisplay = document.getElementById("amount");
+
+    vehicleSelect.addEventListener("change", function() {
+      const fare = this.value;
+      if (fare) {
+        amountDisplay.textContent = "MONEY: $" + fare;
+      } else {
+        amountDisplay.textContent = "MONEY: $0";
+      }
+    });
+  </script>
+</body>
+</html>

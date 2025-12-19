@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🚕 Book Cab</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #e6e6fa; /* lavender */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 4px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #14b8a6; /* teal */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0d9488;
+    }
+    .message {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .error {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🚕 Book Cab</h2>
+    <form id="cabForm">
+      <label for="pickup">Pickup</label>
+      <input type="text" id="pickup" />
+
+      <label for="drop">Drop</label>
+      <input type="text" id="drop" />
+
+      <label for="cab">Cab Type</label>
+      <select id="cab">
+        <option value="100">Mini - ₹100</option>
+        <option value="150">Sedan - ₹150</option>
+        <option value="200">SUV - ₹200</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+    <div id="message" class="message" style="display:none;"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('cabForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pickup = document.getElementById('pickup').value.trim();
+      const drop = document.getElementById('drop').value.trim();
+      const fare = document.getElementById('cab').value;
+
+      if (!pickup || !drop) {
+        message.textContent = '❌ Please enter pickup and drop location';
+        message.className = 'message error';
+        message.style.display = 'block';
+      } else {
+        message.textContent = `✅ Cab Booked! Fare: ₹${fare}`;
+        message.className = 'message success';
+        message.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

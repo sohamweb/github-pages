@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Check Weather</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #4facfe, #00f2fe); /* nice gradient */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 8px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background: #4facfe;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00c6fb;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Weather App</h2>
+    <input type="text" id="city" placeholder="Enter city name" />
+    <button onclick="checkWeather()">Check Weather</button>
+    <div id="result">Weather info will appear here.</div>
+  </div>
+
+ <script>
+function checkWeather() {
+var city = document.getElementById("city").value;
+var weather;
+
+if (city == "Pune") {
+weather = "🌤️ Sunny, 30°C";
+}
+else if (city == "Mumbai") {
+weather = "🌧️ Rainy, 28°C";
+}
+else if (city == "Delhi") {
+weather = "☀️ Hot, 35°C";
+}
+else if (city == "") {
+weather = "❗ Please enter a city name";
+}
+else {
+weather = "❄️ Cold, 20°C";
+}
+
+document.getElementById("result").innerHTML =
+"Weather in " + city + ": " + weather;
+}
+</script></body>
+</html>
